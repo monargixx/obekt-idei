@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Идеи для ОБЪЕКТ · Полина Данилова</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1ea;--ink:#111;--acc:#ff4b1f;--line:#111;--mut:#6b675f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-snap-type:y proximity;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Montserrat,Arial,sans-serif;font-weight:400;line-height:1.5;-webkit-font-smoothing:antialiased}
+section{min-height:100vh;min-height:100svh;scroll-snap-align:start;padding:7vh 6vw 9vh;position:relative;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid var(--line)}
+.dots{position:absolute;right:0;top:0;width:34vw;height:34vw;max-width:420px;max-height:420px;background-image:radial-gradient(var(--ink) 1.3px,transparent 1.6px);background-size:14px 14px;opacity:.16;pointer-events:none;-webkit-mask-image:linear-gradient(225deg,#000 10%,transparent 70%);mask-image:linear-gradient(225deg,#000 10%,transparent 70%)}
+.num{position:absolute;left:6vw;top:5vh;font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:500}
+.num b{color:var(--acc);font-weight:500}
+h1{font-weight:200;font-size:clamp(40px,8vw,118px);line-height:1;letter-spacing:-.03em;max-width:14ch}
+h1 em{font-style:normal;color:var(--acc);font-weight:500}
+h2{font-weight:200;font-size:clamp(30px,4.6vw,66px);line-height:1.05;letter-spacing:-.02em;max-width:20ch;margin-bottom:5vh}
+h2 em{font-style:normal;color:var(--acc);font-weight:500}
+.cap{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--mut);margin-bottom:3vh}
+p.lead{font-size:clamp(16px,1.6vw,22px);font-weight:300;max-width:46ch}
+.grid{display:grid;gap:0;border-top:3px solid var(--ink)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.cell{padding:2.4vh 1.6vw 3vh 0;border-bottom:1px solid var(--ink)}
+.cell+.cell{padding-left:1.6vw;border-left:1px solid var(--ink)}
+.cell .n{font-size:clamp(34px,4.4vw,62px);font-weight:800;color:var(--acc);line-height:1;letter-spacing:-.04em}
+.cell h3{font-size:14px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin:1.6vh 0 1vh}
+.cell p{font-size:clamp(14px,1.15vw,16px);font-weight:300}
+.row{display:grid;grid-template-columns:2fr 3fr;gap:5vw;align-items:start}
+.hook{font-size:clamp(24px,3vw,44px);font-weight:300;line-height:1.15;letter-spacing:-.02em;border-left:5px solid var(--acc);padding-left:1.6vw;margin-bottom:3vh}
+.list{border-top:3px solid var(--ink)}
+.list div{padding:1.6vh 0;border-bottom:1px solid var(--ink);display:grid;grid-template-columns:7.5ch 1fr;gap:1.5vw;font-weight:300;font-size:clamp(14px,1.2vw,17px)}
+.list span{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--acc);padding-top:.3em}
+.tag{display:inline-block;border:1px solid var(--ink);padding:.3em .9em;font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin:0 .6em .6em 0}
+.big{font-size:clamp(60px,12vw,170px);font-weight:200;letter-spacing:-.05em;line-height:.9}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.25em}
+a:hover{color:var(--acc)}
+.sig{position:absolute;left:6vw;right:6vw;bottom:3vh;font-size:11px;letter-spacing:.14em;color:var(--mut);display:flex;justify-content:space-between;gap:2vw}
+.nav{position:fixed;right:18px;bottom:16px;z-index:9;font-size:11px;letter-spacing:.2em;background:var(--ink);color:var(--bg);padding:.6em 1em}
+@media(max-width:820px){
+ section{padding:9vh 20px 11vh;justify-content:flex-start;padding-top:12vh}
+ .num{left:20px}
+ .g4,.g3,.g2,.row{grid-template-columns:1fr}
+ .cell+.cell{padding-left:0;border-left:0}
+ .cell{padding-right:0}
+ .sig{left:20px;right:20px;flex-direction:column;gap:2px;position:static;margin-top:5vh}
+ h1{max-width:100%}
+ .list div{grid-template-columns:1fr;gap:2px}
+}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+.frames{display:flex;gap:12px;margin-bottom:3vh;flex-wrap:wrap}
+.fr{aspect-ratio:9/16;width:calc(25% - 9px);min-width:96px;max-width:150px;background:var(--ink);color:var(--bg);padding:10px;display:flex;flex-direction:column;justify-content:space-between;font-size:9px;letter-spacing:.2em;text-transform:uppercase;position:relative}
+.fr b{font-size:clamp(22px,2.6vw,38px);font-weight:800;color:var(--acc);letter-spacing:-.04em;line-height:1}
+.fr b.w{font-size:clamp(15px,1.55vw,24px);letter-spacing:-.02em}
+.fr::after{content:"";position:absolute;left:10px;right:10px;top:22%;height:1px;background:var(--bg);opacity:.25}
+.hooks{margin-bottom:2.4vh;border-top:1px solid var(--ink)}
+.hooks span{display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);font-weight:500;padding:1.2vh 0}
+.hooks div{font-size:clamp(14px,1.2vw,17px);font-weight:300;padding:.9vh 0;border-top:1px solid var(--ink)}
+.cover-fr{position:absolute;right:7vw;bottom:14vh;width:clamp(120px,15vw,210px)}
+.nav{right:14px;top:14px;bottom:auto;display:flex;align-items:center;gap:.8em}
+.nav button{background:none;border:1px solid var(--bg);color:var(--bg);width:30px;height:26px;font-size:14px;cursor:pointer}
+.nav button:hover{background:var(--acc);border-color:var(--acc)}
+.list div{font-size:clamp(15px,1.35vw,20px)}
+.cell p{font-size:clamp(15px,1.3vw,19px)}
+@media(max-width:820px){.num{top:62px;max-width:calc(100% - 40px)}section{padding-top:17vh}.cover-fr{display:none}.fr{min-width:70px;width:calc(25% - 9px)}}
+</style>
+</head>
+<body>
+
+<section>
+ <div class="dots"></div>
+ <div class="num"><b>00</b> / Центр недвижимости ОБЪЕКТ</div>
+ <p class="cap rv">Рилсмейкер · контент-креатор</p>
+ <h1 class="rv">Контент, который приводит <em>заявки</em></h1>
+ <p class="lead rv" style="margin-top:5vh">Идеи, рубрики и готовые хуки для аккаунта ОБЪЕКТ. Я изучила ваш сайт и вакансию (аккаунт изнутри не видела) и придумала, что можно снимать.</p>
+ <div class="fr cover-fr rv"><span>рубрика A</span><b class="w">7 МЛН</b><span>выпуск 01</span></div>
+ <div class="sig"><span>Данилова Полина Антоновна</span><span>Instagram @monargixx · Telegram @monargixx</span></div>
+</section>
+
+<section>
+ <div class="num"><b>01</b> / Что я увидела</div>
+ <h2 class="rv">Сильная база и честный голос, <em>которые стоит упаковать</em></h2>
+ <div class="grid g4 rv">
+  <div class="cell"><div class="n">72 000</div><h3>квартир в базе</h3><p>Около 300 ЖК и обновление базы каждые пять минут. Тем для роликов хватит на год вперёд.</p></div>
+  <div class="cell"><div class="n">54</div><h3>ипотечные программы</h3><p>Самая непонятная для людей часть покупки, и у вас она решается. Хорошая тема для коротких объяснений.</p></div>
+  <div class="cell"><div class="n">ТОП-3</div><h3>среди компаний города</h3><p>По данным вашей вакансии, 2024 год. Доверие уже есть, контенту остаётся показать его картинкой и историями.</p></div>
+  <div class="cell"><div class="n">2 000+</div><h3>тёплых лидов в месяц</h3><p>По данным вашей вакансии, из аккаунта. Значит, каждый ролик измеряется заявками, и креатив тут напрямую связан с результатом.</p></div>
+ </div>
+ <p class="lead rv" style="margin-top:4vh">На сайте вы говорите живо и по-человечески, от лица основателей, и ведёте клиента за руку до ключей. Мне близка именно эта интонация. Цифры про базу и ипотеку с сайта spb-object.ru на 20.11.2026, а ТОП-3 и лиды из вашей вакансии.</p>
+</section>
+
+<section>
+ <div class="num"><b>02</b> / Где вижу точки роста</div>
+ <h2 class="rv">Четыре гипотезы, <em>которые проверю в первый месяц</em></h2>
+ <div class="grid g2 rv">
+  <div class="cell"><h3>1 · Рубрики вместо отдельных роликов</h3><p>Когда у формата есть имя и повторяющийся хук, подписчик ждёт следующую серию, а команда быстрее снимает.</p></div>
+  <div class="cell"><h3>2 · Цифры в картинку</h3><p>54 программы и 72 000 квартир выглядят сильнее, когда их видно на экране, а не только слышно.</p></div>
+  <div class="cell"><h3>3 · Честность как формат</h3><p>Одна из ценностей из вашей вакансии. Рубрики вроде «чего не покажут в буклете» превращают её в то, за чем следят.</p></div>
+  <div class="cell"><h3>4 · Люди рядом с кадром</h3><p>Команда и покупатели уже есть. Руки с ключами, силуэты, голоса героев, первые минуты в квартире, это самый сильный контент.</p></div>
+ </div>
+ <p class="cap rv" style="margin-top:4vh">Гипотезы построены по сайту и вакансии. Статистику аккаунта изнутри я не видела и с радостью сверю на тестовом задании.</p>
+</section>
+
+<section>
+ <div class="dots"></div>
+ <div class="num"><b>03</b> / Система на 20 роликов в месяц</div>
+ <h2 class="rv">Четыре рубрики <em>по пять выпусков</em></h2>
+ <div class="grid g4 rv">
+  <div class="cell"><div class="n">A</div><h3>Квартира за бюджет</h3><p>Что можно купить за 6, 8, 10 млн. Покадровый тур, цена на экране.</p></div>
+  <div class="cell"><div class="n">B</div><h3>Ипотека за 30 секунд</h3><p>Одна программа за ролик, руки и графика, без лица.</p></div>
+  <div class="cell"><div class="n">C</div><h3>Ключи</h3><p>Первые минуты в своей квартире. Живые эмоции героев.</p></div>
+  <div class="cell"><div class="n">D</div><h3>Вид из окна</h3><p>Одно окно, разные этажи и время суток. Район за 20 секунд.</p></div>
+ </div>
+ <p class="lead rv" style="margin-top:4vh">Двадцать единиц в месяц, как в вашей вакансии. При желании часть выпусков сделаю каруселями из тех же рубрик (чек-листы, сравнения, цены).</p>
+</section>
+
+<section>
+ <div class="num"><b>04</b> / Идея A</div>
+ <div class="row">
+  <div>
+   <p class="cap rv">Рубрика «Квартира за бюджет»</p>
+   <div class="hook rv">Обратный отсчёт. Цена падает, а квартира меняется</div>
+   <div class="hooks rv"><span>Три хука на выбор</span><div>«Что можно купить в Петербурге за 7 миллионов»</div><div>«Десять миллионов, девять, восемь. Где предел?»</div><div>«Самая дешёвая двушка из вашей базы»</div></div>
+   <span class="tag">механика</span><span class="tag">цена на экране</span><span class="tag">серия</span>
+  </div>
+  <div>
+   <div class="frames rv"><div class="fr"><span>10 млн</span><b>10</b><span>большая двушка</span></div><div class="fr"><span>9 млн</span><b>9</b><span>меньше кухня</span></div><div class="fr"><span>8 млн</span><b>8</b><span>другой район</span></div><div class="fr"><span>7 млн</span><b>7</b><span>балкон остался</span></div></div>
+   <div class="list rv"><div><span>Механика</span>Каждые две секунды цена на экране падает на миллион, план и вид из окна меняются. В конце зритель видит, где проходит граница.</div><div><span>Кадры</span>Один плавный проход камерой в каждой квартире, крупная цифра цены, одинаковая рамка у всех кадров.</div><div><span>Финал</span>Последний кадр с ценой 7 млн и подпись «Следующий выпуск, 6 миллионов. Балкон будет меньше, вид лучше». Задел на серию без призывов.</div><div><span>Метрика</span>Досмотры до конца и сохранения. Сравниваем выпуски по бюджету.</div></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="num"><b>05</b> / Идея B</div>
+ <div class="row">
+  <div>
+   <p class="cap rv">Рубрика «Ипотека за 30 секунд»</p>
+   <div class="hook rv">Платёж против аренды, на цифрах и без лица</div>
+   <div class="hooks rv"><span>Три хука на выбор</span><div>«Платёж 41 тысяча. Это меньше аренды?»</div><div>«Ипотека под 6 процентов, а вам одобрят?»</div><div>«54 программы, а вы знаете одну»</div></div>
+   <span class="tag">руки в кадре</span><span class="tag">графика</span><span class="tag">без лица</span>
+  </div>
+  <div>
+   <div class="frames rv"><div class="fr"><span>ставка</span><b>6%</b><span>семейная</span></div><div class="fr"><span>платёж</span><b>41</b><span>тысяча в месяц</span></div><div class="fr"><span>аренда</span><b>55</b><span>тысяч за такую же</span></div><div class="fr"><span>документы</span><b class="w">ДОК</b><span>на столе главные</span></div></div>
+   <div class="list rv"><div><span>Механика</span>Одна программа в ролике. Крупные цифры, руки с калькулятором и бумагами, весь смысл за 30 секунд. Цифры на кадрах только пример расчёта, настоящие подставим вместе.</div><div><span>Кадры</span>Ставка, платёж, сравнение с арендой, два документа на столе, одна фраза итогом.</div><div><span>Финал</span>Кадр с пустым листом и надпись «Следующая серия, IT-ипотека. Спойлер, она ещё интереснее».</div><div><span>Серия</span>Семейная, IT, военная, господдержка, субсидированная застройщиком. Пять выпусков из 54 программ для старта.</div></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="num"><b>06</b> / Идея C</div>
+ <div class="row">
+  <div>
+   <p class="cap rv">Рубрика «Ключи»</p>
+   <div class="hook rv">Первая минута в квартире, без лиц и без позы</div>
+   <div class="hooks rv"><span>Три хука на выбор</span><div>«Мебель пока из коробок»</div><div>«Первое, что делают в новой квартире»</div><div>«Ключ тяжелее, чем кажется»</div></div>
+   <span class="tag">герои</span><span class="tag">эмоция</span><span class="tag">доверие</span>
+  </div>
+  <div>
+   <div class="frames rv"><div class="fr"><span>рука</span><b class="w">КЛЮЧ</b><span>в ладони</span></div><div class="fr"><span>дверь</span><b class="w">ТЕНЬ</b><span>в проёме</span></div><div class="fr"><span>комната</span><b class="w">ПУСТО</b><span>и коробки</span></div><div class="fr"><span>окно</span><b class="w">ВИД</b><span>на двор</span></div></div>
+   <div class="list rv"><div><span>Механика</span>Семья не показывается лицом, поэтому ролик работает без сложных согласований. Руки, силуэт в дверях, окно, коробки.</div><div><span>Условия</span>Съёмка только с письменного согласия семьи и в день выдачи ключей.</div><div><span>Финал</span>Кадр с коробками и подпись «Следующая серия, первый вечер». Задел на продолжение.</div><div><span>Смысл</span>Это ваш лучший аргумент. По данным сайта, больше 4 000 семей уже купили у вас квартиру, и теперь это можно показать.</div></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="num"><b>07</b> / Идея D</div>
+ <div class="row">
+  <div>
+   <p class="cap rv">Рубрика «Вид из окна»</p>
+   <div class="hook rv">Один двор, бегущий этаж. Что видно с высоты</div>
+   <div class="hooks rv"><span>Три хука на выбор</span><div>«Что видно с 18 этажа»</div><div>«Третий этаж или двадцать пятый, почувствуйте разницу»</div><div>«Один двор, 25 этажей»</div></div>
+   <span class="tag">таймлапс</span><span class="tag">район</span><span class="tag">атмосфера</span>
+  </div>
+  <div>
+   <div class="frames rv"><div class="fr"><span>этаж</span><b>3</b><span>двор и деревья</span></div><div class="fr"><span>этаж</span><b>9</b><span>крыши и небо</span></div><div class="fr"><span>этаж</span><b>18</b><span>весь район</span></div><div class="fr"><span>этаж</span><b>25</b><span>горизонт</span></div></div>
+   <div class="list rv"><div><span>Механика</span>Один и тот же кадр из окна, бегущая цифра этажа в углу, вид растёт на глазах. Район и ЖК выберем вместе, хук только пример.</div><div><span>Кадры</span>Днём и вечером, детали района рядом, метро, парк, школа в пешей доступности.</div><div><span>Финал</span>Последний кадр с горизонтом и подпись «Следующий район, там вид на воду».</div><div><span>Метрика</span>Досмотры, сохранения, вопросы про конкретный ЖК.</div></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="num"><b>08</b> / Ещё десять идей</div>
+ <h2 class="rv">Чтобы было из чего <em>выбирать</em></h2>
+ <div class="list rv">
+  <div><span>E</span>«Чего не покажут в буклете». Честный осмотр квартиры, плюсы и минусы. Ваша ценность «честность» в чистом виде.</div>
+  <div><span>F</span>«Планировка покадрово». План превращается в 3D, а потом в реальную расстановку мебели.</div>
+  <div><span>G</span>«Для кого эта квартира». Для пары, для фрилансера, для семьи с котом. Лёгкий формат на пересылки.</div>
+  <div><span>H</span>«День риелтора». Закулисье, без лица в кадре, голос и руки. Показывает команду и честный процесс.</div>
+  <div><span>I</span>«Ошибки при приёмке». Чек-лист из пяти вещей, которые нужно проверить до подписания.</div>
+  <div><span>J</span>«Мифы про новостройки». Один миф в ролике, коротко, с цифрами.</div>
+  <div><span>K</span>«Сколько стоит жить». Ежемесячные траты в разных ЖК, платёж плюс коммуналка.</div>
+  <div><span>L</span>«Ремонт мечты за кадром». До и после, лайфхаки по оформлению пустой коробки.</div>
+  <div><span>M</span>«Метро или двор». Сравнение двух ЖК в одном ролике по пяти критериям.</div>
+  <div><span>N</span>«Ответы на вопросы из директа». Реальные вопросы клиентов, коротко и без рекламы.</div>
+ </div>
+</section>
+
+<section>
+ <div class="num"><b>09</b> / Как я работаю</div>
+ <h2 class="rv">От идеи до ролика <em>без хаоса</em></h2>
+ <div class="grid g4 rv">
+  <div class="cell"><div class="n">1</div><h3>Идея и хук</h3><p>Три варианта хука к каждой идее, выбираем самый сильный.</p></div>
+  <div class="cell"><div class="n">2</div><h3>Раскадровка</h3><p>До выезда раскладываю ролик покадрово и знаю, что снимать на локации.</p></div>
+  <div class="cell"><div class="n">3</div><h3>Съёмка и монтаж</h3><p>Снимаю сама, монтирую в CapCut, ритм строю от голоса и звука.</p></div>
+  <div class="cell"><div class="n">4</div><h3>Разбор цифр</h3><p>Если дадите доступ к статистике, раз в неделю смотрим, что сработало, и усиливаем лучшие форматы.</p></div>
+ </div>
+ <p class="lead rv" style="margin-top:4vh">Опыт вертикального видео у меня уже есть. Снимала и монтировала Reels для lifestyle-блога на телефон, свои работы собрала в <a href="https://monargixx.github.io/polina-danilova/">портфолио</a>.</p>
+</section>
+
+<section>
+ <div class="dots"></div>
+ <div class="num"><b>10</b> / Что предлагаю</div>
+ <div class="big rv">3 + 1</div>
+ <h2 class="rv" style="margin-top:3vh">Три раскадровки и один <em>пилотный ролик</em></h2>
+ <p class="lead rv">В качестве знакомства могу подготовить три раскадровки из рубрик A, B и C с хуками и подписями, и снять один пилот по тому ЖК, который вы выберете. Дальше решите, подходит ли вам мой взгляд.</p>
+ <p class="lead rv" style="margin-top:3vh"><b style="font-weight:500">Напишите, какой ЖК снять первым.</b> Telegram @monargixx</p>
+</section>
+
+<section>
+ <div class="num"><b>11</b> / Кто я</div>
+ <h2 class="rv">Полина <em>Данилова</em></h2>
+ <div class="grid g2 rv">
+  <div class="cell"><h3>О себе</h3><p>Креативный и исполнительный продюсер. Живу в Пушкине, учусь на экономике. Занималась спортивной гимнастикой, поэтому мне близки дисциплина и дедлайны. Организую мероприятия, веду PR и продвижение брендов.</p></div>
+  <div class="cell"><h3>Контакты</h3><p>Telegram @monargixx<br>Instagram @monargixx<br>+7 911 792-50-36<br>Портфолио<br><a href="https://monargixx.github.io/polina-danilova/">monargixx.github.io/polina-danilova</a><br>Резюме<br><a href="https://spb.hh.ru/resume/fea3ce93ff0ef29d990039ed1f354c6e4c536e">hh.ru</a></p></div>
+ </div>
+ <div class="sig"><span>Все идеи предоставлены Даниловой Полиной Антоновной.</span><span>Instagram @monargixx</span></div>
+</section>
+
+<div class="nav"><button id="pv" aria-label="назад">←</button><span id="nav">00 / 11</span><button id="nx" aria-label="вперёд">→</button></div>
+<script>
+const secs=[...document.querySelectorAll('section')];
+const nav=document.getElementById('nav');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.rv').forEach((el,i)=>setTimeout(()=>el.classList.add('in'),i*110));nav.textContent=String(secs.indexOf(e.target)).padStart(2,'0')+' / '+(secs.length-1)}}),{threshold:.35});
+function go(d){const y=scrollY+innerHeight/2;const i=secs.findIndex(s=>s.offsetTop+s.offsetHeight>y);secs[Math.max(0,Math.min(i+d,secs.length-1))].scrollIntoView()}
+document.getElementById('pv').onclick=()=>go(-1);document.getElementById('nx').onclick=()=>go(1);
+secs.forEach(s=>io.observe(s));
+addEventListener('keydown',e=>{
+ const y=scrollY+innerHeight/2;let i=secs.findIndex(s=>s.offsetTop+s.offsetHeight>y);
+ if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();secs[Math.min(i+1,secs.length-1)].scrollIntoView()}
+ if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();secs[Math.max(i-1,0)].scrollIntoView()}
+});
+</script>
+</body>
+</html>
